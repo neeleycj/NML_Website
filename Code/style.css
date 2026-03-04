@@ -1,0 +1,136 @@
+/* 1. Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* This keeps padding from breaking widths */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* 2. The Floating Banner */
+.main-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 200px; /* Increased height for logo + buttons */
+    background-color: rgba(33, 33, 33, 0.95); /* Slight transparency */
+    backdrop-filter: blur(5px); /* Blurs content behind the banner */
+    color: white;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;  /* Centers content vertically */
+}
+.banner-content {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #00d4ff;
+}
+
+/* 4. Button Styling */
+.banner-buttons {
+    display: flex;        /* Put buttons side-by-side */
+    width: 100%;          /* Stretch container to full width */
+}
+
+/* The Buttons themselves */
+.nav-btn {
+    flex: 1;              /* Each button takes up 50% of the width */
+    padding: 20px;   /* Vertical height for the buttons */
+    cursor: pointer;
+    background: #222;
+    color: white;
+    border: none;         /* Remove default borders */
+    border-top: 1px solid #444; /* Subtle line separating logo from buttons */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add a border between the two buttons */
+.nav-btn:first-child {
+    border-right: 1px solid #444;
+}
+
+.nav-btn:hover {
+    background-color: whitesmoke;
+    color: #000;
+}
+/* 5. Space for the Content */
+.content {
+    padding-top: 240px; /* More padding so content starts below banner */
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 200vh; /* Adds extra height to test the scroll */
+}
+.banner-logo-img {
+    height: 100px;       /* Control the size here */
+    width: auto;        /* Prevents squishing */
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.banner-logo-img:hover {
+    transform: scale(1.05); /* Makes it pop slightly when hovered */
+}
+
+a.nav-btn {
+    text-decoration: none; /* Remove underline from links */
+}
+.links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between logos */
+}
+.social-logo-img {
+    height: 150px;       /* Control the size here */
+    width: auto;        /* Prevents squishing */
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+.social-logo-img:hover {
+    transform: scale(1.1); /* Makes it pop slightly when hovered */
+}
+
+.RLS-logo {
+    width: auto;        /* Prevents squishing */
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+}
+.RLS-logo-img {
+    height: 250px;       /* Control the size here */
+    width: auto;        /* Prevents squishing */
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
