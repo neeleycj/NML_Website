@@ -5,6 +5,41 @@
     box-sizing: border-box; /* This keeps padding from breaking widths */
 }
 
+@media (max-width: 600px) {
+    /* Make the logo bigger on small screens */
+    .banner-logo-img {
+        height: 80px; 
+    }
+
+    /* Make your rule headers (summary) much easier to read/tap */
+    summary {
+        font-size: 18px;
+        padding: 20px 15px; /* Bigger tap target for thumbs */
+    }
+
+    /* Make the rule text inside larger */
+    .rule-content {
+        font-size: 16px;
+    }
+
+    /* Banner buttons text size */
+    .nav-btn {
+        font-size: 14px;
+        padding: 15px 5px;
+    }
+
+    .links-container { 
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0;
+    }
+
+    .social-logo-img {
+        width: 50px; /* Make them larger for easy tapping */
+        height: auto;
+    }
+
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
@@ -26,7 +61,7 @@ body {
     z-index: 9999;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
-    flex-direction: column;  /* Centers content vertically */
+    flex-direction: column;
 }
 .banner-content {
     width: 100%;
@@ -47,6 +82,8 @@ body {
 .banner-buttons {
     display: flex;        /* Put buttons side-by-side */
     width: 100%;          /* Stretch container to full width */
+    justify-content: center; /* Horizontal center */
+    align-items: center;
 }
 
 /* The Buttons themselves */
@@ -66,16 +103,13 @@ body {
     justify-content: center;
 }
 
-/* Add a border between the two buttons */
-.nav-btn:first-child {
-    border-right: 1px solid #444;
-}
+
 
 .nav-btn:hover {
     background-color: whitesmoke;
     color: #000;
 }
-/* 5. Space for the Content */
+
 .content {
     flex: 1; /* This "pushes" the footer down */
     padding-top: 220px; /* Space for your floating banner */
@@ -107,14 +141,15 @@ a.nav-btn {
 .links {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between logos */
 }
 .social-logo-img {
+    padding: 10px;
     height: 150px;       /* Control the size here */
     width: auto;        /* Prevents squishing */
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px;
+    display: flex;
+    justify-content: center; /* Keep them bunched together in the center */
+    max-width: 400px;
+
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
 .social-logo-img:hover {
