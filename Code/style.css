@@ -133,4 +133,43 @@ a.nav-btn {
     padding: 10px;
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
+/* Container for each dropdown */
+.rule-section {
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+}
+
+/* The "Header" of the dropdown */
+summary {
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #222;
+    color: #00d4ff;
+    list-style: none; /* Removes the default arrow in some browsers */
+}
+
+/* Adding a custom indicator (optional) */
+summary::before {
+    content: "▶ ";
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+/* Rotates the arrow when the section is open */
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* The text inside */
+.rule-content {
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+    border-top: 1px solid #eee;
+}
 

@@ -18,9 +18,996 @@
                 </nav>
             </div>
         </header>
-
+    
       <main class="content">
-            <p>Welcome to No Man's Land!</p>
+            <h2>How To Play</h2>
+
+            <h3>Tutorial Video</h3>
+            <div class="video-container">
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+
+            <h3>Basic Rules</h3>
+            
+            <details class="rule-section">
+                <summary>Goal of the Game</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>Reduce your opponent's health from 30 to 0.</li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+
+            <details class="rule-section">
+                <summary>Setup</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                You will have 2 decks, one Resource deck and one Play deck
+                                <ul>
+                                    <li>
+                                        The Play Deck must contain exactly 50 cards with no more than 3 copies of each card.
+                                    </li>
+                                    <li>
+                                        The resource deck can have any resources and can be shared amongst all decks as they are not mixed into the play deck.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Shuffle your play deck and draw 6 cards. You have a maximum hand size of 6. Once, before the game begins, you may mulligan by shuffling your hand and drawing a new hand of 6 cards.
+                            </li>
+                            <li>
+                                Put one converted resource of your choice onto your side of the field (Converted means with the resource type face up).
+                            </li>
+                            <li>
+                                Find a way to keep track of each player's life total and start each player at 30 life.
+                            </li>
+                            <li>
+                                Determine which player will go first. Whoever goes first does NOT draw a card during their first start phase.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+
+            <details class="rule-section">
+                <summary>Card Types</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                There are 5 types of cards in this game:
+                                <ul>
+                                    <li>
+                                        Creatures:
+                                        <ul>
+                                            <li>
+                                                These cards are your main units on the board and are placed on the battlefield. You identify these cards by the creature text and the card having a health and attack stat.
+                                            </li>
+                                            <li>
+                                                When played, they are put on any vacant zone on your side of the field either the frontline or backline.
+                                            </li>
+                                            <li>
+                                                Creatures enter the battlefield with summoning sickness. This means you can’t activate them or use an ability they have with “Exhaust” as a cost until the start of your next refresh step.
+                                            </li>
+                                            <li>
+                                                Their attack and range stat is on the bottom left and their health is on the bottom right of the card.
+                                            </li>
+                                            <li>
+                                                Their range is determined by the symbol used in their attack stat. Range can only be either 1, 2, or 3 and can't go higher or lower.
+                                                <ul>
+                                                    <li>
+                                                        Crossed swords are melee with a range of 1.
+                                                    </li>
+                                                    <li>
+                                                        Bow with 2 arrows is ranged with a range of 2.
+                                                    </li>
+                                                    <li>
+                                                        Bow with 3 arrows is ranged with a range of 3.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Even if a creature has its range reduced from 2 or higher down to 1, they are still considered a ranged creature unless stated otherwise.
+                                            </li>
+                                            <li>
+                                                Range cannot be below 1 or above 3.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Constructs:
+                                        <ul>
+                                            <li>
+                                                These cards are also permanently placed on the field similar to creatures, but they cannot move and ONLY have a health stat.
+                                            </li>
+                                            <li>
+                                                Although these are summoned, they do NOT have summoning sickness.
+                                            </li>
+                                            <li>
+                                                When played, they are put on any vacant zone on your side of the field.
+                                                <ul>
+                                                    <li>
+                                                        Barricades are the only exception to this and can be played in NML.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Terrains:
+                                        <ul>
+                                            <li>
+                                                These cards are unique and have a different layout with their name on the side of the card to make it easy to read while stacking (explained later)
+                                            </li>
+                                            <li>
+                                                There are 2 types of terrains.
+                                                <ul>
+                                                    <li>
+                                                        Field terrains
+                                                        <ul>
+                                                            <li>
+                                                                These must be placed in the field terrain zones on either your side or your opponents side of the battlefield.
+                                                            </li>
+                                                            <li>
+                                                                These affect the entire side of the battlefield they are placed on unless specified otherwise.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        Zone terrains
+                                                        <ul>
+                                                            <li>
+                                                                These can be played on any zone on the battlefield, vacant or not.
+                                                            </li>
+                                                            <li>
+                                                                These only affect the specific zone they are placed in.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Treat zones with a terrain on them like a normal zone when it comes to moving creatures, summoning units, and attacking. They just have extra effects on them that immediately apply once a creature moves into that zone.
+                                            </li>
+                                            <li>
+                                                These cards are unique because you may play a terrain ON TOP of another terrain. Doing this ends the covered up card's ability and starts the ability of the card on top.
+                                                <ul>
+                                                    <li>
+                                                        If there is a stack of terrains and the top terrain is removed for any reason, the terrain underneath will take effect again.
+                                                    </li>
+                                                    <li>
+                                                        If there is a chain of cards and destroying a terrain is an effect in the chain, when the terrain is destroyed and the new terrain is revealed, its effect happens immediately before moving onto any more effects in the chain.
+                                                    </li>
+                                                    <li>
+                                                       All terrains in a stack are still considered in play but not valid targets. This means if a card talks about how many terrains are in play the stacked terrains still count, but cannot be targeted by effects or abilities. If something targets ALL terrains, the stacked terrains are affected. 
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Spells:
+                                        <ul>
+                                            <li>
+                                                These are one time effect cards. They do not go on the battlefield but rather have the effect described on the card happen then go to your pitch zone.
+                                            </li>
+                                            <li>
+                                                There are 2 types of spell cards
+                                                <ul>
+                                                    <li>
+                                                        Prepared
+                                                        <ul>
+                                                            <li>
+                                                                These can only be played on your turn while nothing else is in the chain.
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        Reaction
+                                                        <ul>
+                                                            <li>
+                                                                These can be played at any time during your turn, your opponents turn, or even in response to another action to happen first!
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Resource Cards:
+                                        <ul>
+                                            <li>
+                                                These are kept separate from your main deck and are used to pay the costs of cards. 
+                                            </li>
+                                            <li>
+                                                These are 2 sided, one unconverted and the other converted to a specific resource type.
+                                            </li>
+                                            <li>
+                                                During gameplay, you may exhaust a resource card at any time to put 1 resource into your resource pool.
+                                                <ul>
+                                                    <li>
+                                                        The resource pool is an imaginary area used to hold resources until they are spent to play cards or activate abilities.
+                                                    </li>
+                                                    <li>
+                                                        Resources in the resource pool stay there until they are used or until the current phase of the game ends at which time they disappear. This is only for changes between the Start Phase, Main Phase, and End Phase, not combat phases.
+                                                    </li>
+                                                    <li>
+                                                        Resource cards produce 1 resource of the given type. 
+                                                    </li>
+                                                    <li>
+                                                        If a resource card is exhausted to put a resource into the pool, but then that resource isn’t used, that resource card STAYS EXHAUSTED and cannot be used again until it is refreshed.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Playing Cards</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                To play a card you must pay its resource cost. This is always in the top left of a card.
+                                <ul>
+                                    <li>
+                                        Resources of a specified type may only be paid with that specific type. 
+                                    </li>
+                                    <li>
+                                        The black numbers may be paid for with any resource type, including unconverted.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Resource cards on your field may be exhausted, usually shown by being turned sideways, to put 1 resource of its type into your resource pool.
+                                <ul>
+                                    <li>
+                                        Converted resources can be used to pay for their specific type OR for 1 unconverted.
+                                    </li>
+                                    <li>
+                                        Unconverted resources can only be used for unconverted costs (the black numbers).
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                There are 3 steps when playing a card
+                                <ul>
+                                    <li>
+                                        1. Float the resources needed by exhausting resource cards
+                                    </li>
+                                    <li>
+                                        2. Play the card onto the stack (explained below)
+                                    </li>
+                                    <li>
+                                        3. Resolve the card.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Example:
+                                <ul>
+                                    <li>
+                                        Caxoris has a total resource cost of 4. To pay for this cost, one resource MUST be arcane, one MUST be refined, one MUST be tech, and the other 1 can be paid with either converted or unconverted resources.
+                                    </li>
+                                    <li>
+                                        After you pay for the card, he goes onto the stack which means he will be put on the battlefield but doesn’t yet.
+                                        <ul>
+                                            <li>
+                                                This means that his first ability does not happen yet because he is not on the battlefield. If someone uses a reaction to destroy a construct that would’ve helped you draw a card while he is on the stack, that construct would go away before he enters and wont help you.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        If no one does anything on the stack, or after everyone has finished doing things on the stack, then the card can resolve. This means he finally enters the battlefield and triggers his ability.
+                                    </li>
+                                    <li>
+                                        Just pay and play cards unless you or someone else wants to do things on the stack.
+                                    </li>
+                                    <img src="" alt="">
+                                </ul>
+                            </li>
+                            <li>
+                                Exhaust and Refresh:
+                                <ul>
+                                    <li>
+                                        Exhaust is a term that is used often and is similar to “tapping” in other games.
+                                        <ul>
+                                            <li>
+                                                When things receive an exhaust, usually you can just remember which things have been exhausted, but a creature can receive more than one exhaust so the use of dice or other tokens might be useful.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Refresh simply means removing 1 exhaust from a creature.
+                                    </li>
+                                    <li>
+                                        This is also used as a cost for many abilities. Any ability with ‘exhaust’ in the cost can only be activated if the card has NO exhaust on it.
+                                    </li>
+                                    <li>
+                                        Creatures with an exhaust on them cannot be activated for their turn or activate any abilities with ‘exhaust’ in the cost.
+                                        <ul>
+                                            <li>
+                                                If a creature attacks and becomes exhausted before it moves during its activation, it may still move.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        If the EFFECT of an ability would exhaust a creature that is already exhausted, they gain an extra exhaust.
+                                        <ul>
+                                            <li>
+                                                At the beginning of your turn during your refresh step, you remove 1 exhaust from everything you control which allows them to be used again your next turn.
+                                            </li>
+                                            <li>
+                                                If a creature has 2 or more exhaust at the start of your turn, it only loses 1 of them and will still be exhausted and unable to activate this turn.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        If a creature loses an exhaust after it has already been activated, it still cannot be activated again that turn.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Play field:</summary>
+                <div class="rule-content">
+                    <p>On your side of the field there are multiple zones to be aware of.</p>
+                    <ul>
+                        <li>
+                            Resource
+                            <ul>
+                                <li>
+                                    Bottom of your mat reserved for your resources.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Deck Zone
+                            <ul>
+                                <li>
+                                    Top right corner where you place your deck face down. (This can be swapped with the Field Terrain zone if desired).
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Pitch Zone
+                            <ul>
+                                <li>
+                                    Just below your deck for all cards that are pitched or destroyed
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Backline
+                            <ul>
+                                <li>
+                                    The bottom 5 zones on your board
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Frontline
+                            <ul>
+                                <li>
+                                    The middle 5 rows on your board
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            No Man’s Land (usually shortened to NML)
+                            <ul>
+                                <li>
+                                    Top 3 half zones on your board.
+                                </li>
+                                <li>
+                                    These combine with your opponents 3 halves to make 3 complete zones
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Void Zones
+                            <ul>
+                                <li>
+                                    The empty spaces on the right and left of NML. These normally don't come into play unless specific cards reference them. No cards can be played in these zones unless the card or an effect says otherwise.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Field Terrain zone
+                            <ul>
+                                <li>
+                                    Single unconnected zone on the left of your front line. (This may be swapped with the deck zone if desired).
+                                </li>
+                                <li>
+                                    ONLY field terrains are able to be played in this zone.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="rule-section">
+                <summary>There are 4 different resources cards:</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                Primal
+                                <ul>
+                                    <li>
+                                        Creature oriented, boosting a few creatures to hit hard.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Arcane
+                                <ul>
+                                    <li>
+                                        Using effects and spells to deal non-combat damage and hinder your opponent.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Tech
+                                <ul>
+                                    <li>
+                                        Building up your defenses to hold off the opponent's attacks to hit back when ready.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Refined
+                                <ul>
+                                    <li>
+                                        Using the synergy of creatures to overwhelm your opponent.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+
+
+            
+            <details class="rule-section">
+                <summary>Turn Sequence:</summary>
+                <div class="rule-content">
+                    <p>
+                        Start Phase: This is when you set up for your turn before you start doing anything. Do the following IN ORDER.
+                        <ol>
+                            <li>
+                                Refresh
+                                <ul>
+                                    <li>
+                                        Turn any used resources upright
+                                    </li>
+                                    <li>
+                                        Creatures with summoning exhaust lose it if they have it.
+                                    </li>
+                                    <li>
+                                        Remove 1 exhaust from any cards on the battlefield you control.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Resource
+                                <ul>
+                                    <li>
+                                        Put an unconverted resource into your resource pool.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Draw
+                                <ul>
+                                    <li>
+                                        Draw a card from your deck
+                                        <ul>
+                                            <li>
+                                                Unless it is the first turn of the player going first, then they skip this step for this turn.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        Main Phase: This is where most of the action happens! You may do any of the following in any order
+                        <ul>
+                            <li>
+                                Pitch to convert
+                                <ul>
+                                    <li>
+                                        You may pitch a card from your hand into the pitch zone. If you do, you may convert one resource in your pool to a resource on the pitched card. If you do, draw a card.
+                                        <ul>
+                                            <li>  
+                                                This can be from unconverted to a resource or even change from one resource type to another.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        This does NOT trigger discard abilities.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Play cards
+                                <ul>
+                                    <li>
+                                        You may play any card in your hand during this time, provided nothing else is on the chain (unless you are playing a reaction spell) and you have the resources to pay for the card.
+                                    </li>
+                                    <li>
+                                        Creatures enter the battlefield with summoning exhaust and cannot be activated or use abilities with ‘exhaust’ in the cost until the start of your next turn.
+                                        <ul>
+                                            <li>
+                                                They can still activate abilities WITHOUT exhaust as a cost.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Activate a non-exhausted creature
+                                <ul>
+                                    <li>
+                                        When you activate a creature you have 2 things you can choose to do and you may do them in any order or choose to not do one of them.
+                                        <ul>
+                                            <li>
+                                                Move to 1 vacant surrounding space (you may not move past NML or into void zones)
+                                                <ul>
+                                                    <li>
+                                                        You may not move into an occupied space unless otherwise stated.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Attack with a creature
+                                                <ul>
+                                                    <li>
+                                                        They become exhausted when you do this, before damage is dealt.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                If you activate a creature to move it but choose to not attack, it does NOT become exhausted, however it cannot be activated again even though it isn’t exhausted.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        MAKE SURE TO DO EVERYTHING YOU WANT TO WITH A CREATURE ONCE YOU ACTIVATE IT! Once you end a creature's activation you can NOT go back to it unless an ability removes its exhaustion counter or gives another activation.
+                                    </li>
+                                    <li>
+                                        Creatures do not count as activated until they are moved or use an action.
+                                    </li>
+                                    <li>
+                                        Once you have finished doing everything you want to with a creature, put an exhaust counter on it.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Activate abilities on units you control.
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        End Phase - When you have finished everything you want to do on your turn, state you’re going to the end of your turn and follow the following steps.
+                        <ol>
+                            <li>
+                                Resolve any “At the end of your turn” effects.
+                                <ul>
+                                    <li>
+                                        Static effects trigger first.
+                                        <ul>
+                                            <li>
+                                                Burnout (At the end of turn, sacrifice this creature if it is in NML)
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Temporary effects trigger second.
+                                        <ul>
+                                            <li>
+                                                Creature gains +2+2 until end of turn
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                All units go back to full health.
+                            </li>
+                            <li>
+                                If you have more than 5 cards in your hand, discard down to 5. This DOES trigger discard triggers.
+                            </li>
+                            <li>
+                                Turn is over.  
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Combat</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                When you choose to attack with a creature there are a few things to know and a few steps to follow.
+                                <ul>
+                                    <li>
+                                        When you choose to attack with a creature, put an exhaust counter on it. It may still move this activation if it has not yet.
+                                    </li>
+                                    <li>
+                                        When a creature attacks, it can only attack straight in front of itself in its column. Creatures cannot attack horizontally unless an ability says otherwise.
+                                    </li>
+                                    <li>
+                                        Creatures can only attack EXACTLY their range. If a creature has a range of 2 they CANNOT attack an adjacent zone.
+                                    </li>
+                                    <li>
+                                        When a creature attacks another creature, they deal damage to each other at the same time this is called Retaliation. See Range -> Retaliation.
+                                    </li>
+                                    <li>
+                                        Creatures deal damage equal to their attack stat and receive damage to their health stat.
+                                    </li>
+                                    <li>
+                                        To deal damage to a player, the attacking creature MUST be in NML and attacking a vacant zone on their opponents field.
+                                    </li>
+                                    <li>
+                                        You ARE able to attack your own units if you want to and they are positioned correctly.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Range
+                                <ul>
+                                    <li>
+                                        This stat determines how far a creature attacks and if it can retaliate.
+                                    </li>
+                                    <li>
+                                        A creature’s range is shown with their attack stat.
+                                        <ul>
+                                            <li>
+                                                Crossed swords/melee = 1 range
+                                            </li>
+                                            <li>
+                                                Bow with 2 arrows/ranged = 2 range
+                                            </li>
+                                            <li>
+                                                Bow with 3 arrows/ranged = 3 range
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        When a creature attacks, it attacks the zone that is however many spaces away its range is.
+                                        <ul>
+                                            <li>
+                                                It can only attack that zone. A ranged character cannot attack 1 zone away and a melee character cannot attack more than 1 zone away.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Range also determines if a creature can retaliate.
+                                        <ul>
+                                            <li>
+                                                Retaliation is a specific scenario in which a creature is attacked and tries to deal damage back.
+                                            </li>
+                                            <li>
+                                                When a creature attacks a zone that is occupied by another creature, check the attacked creature's range. If the attacked creature’s range would hit the attacking creature, then it retaliates. 
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Creatures cannot attack invalid zones (such as a range 3 creature in NML trying to attack).
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Dealing Damage
+                                <ul>
+                                    <li>
+                                        In order to deal damage to a player, your creature must attack a vacant zone on your opponent's field AND be in NML when they do it.
+                                        <ul>
+                                            <li>
+                                                The player loses life equal to the creature’s attack.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        When creatures attack other creatures, they each deal damage to each other at the same time.
+                                        <ul>
+                                            <li>
+                                                Both creatures' attack stat goes to each other's health stat.
+                                            </li>
+                                            <li>
+                                                If a creature's health is dropped to or below 0, that creature will die at the end of combat.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        When constructs are attacked, there is no retaliation, they just lose health equal to the damage.
+                                    </li>
+                                    <li>
+                                        When creatures attack, they are targeting the zone. If a creature is occupying the zone then the damage transfers to them, but if that creature is moved before the damage step, the damage goes back to the zone saving the creature! If this happens and the creature attacking is in NML, then the damage goes back to the player!
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        These are the steps to combat:
+                        <ol>
+                            <li>
+                                Declare the creature attacking, exhaust it, and check the zone in its range
+                                <ul>
+                                    <li>
+                                        If there is a creature in that zone determine if it can retaliate.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Deal Damage
+                                <ul>
+                                    <li>
+                                        If the creature is attacking a vacant zone AND is in NML, deal the damage to the opponent.
+                                    </li>
+                                    <li>
+                                        If they are attacking an occupied zone and the creature CAN retaliate, both creatures deal damage to each others health.
+                                    </li>
+                                    <li>
+                                        If they are attacking an occupied zone and the creature CANNOT retaliate, then only the attacking creature deals damage.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Resolve Damage
+                                <ul>
+                                    <li>
+                                        If any creatures or constructs take damage greater than or equal to their health, destroy them and put them in the pitch.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary><strong>Timing:</strong> When can cards be played and abilities be activated</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                There are 2 “speeds” that determine when cards can be played and abilities can be activated.
+                            </li>
+                            <li>
+                                Prepared Speed
+                                <ul>
+                                    <li>
+                                        Only playable during your turn, during your main phase while not in combat, AND while nothing else is on the stack (explained below).
+                                    </li>
+                                    <li>
+                                        Creatures, Constructs, Terrains, and Prepared Spells all have this timing unless otherwise stated.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Reaction Speed
+                                <ul>
+                                    <li>
+                                        Playable at any time including on your opponent’s turn, during the refresh and end phases of your turn, and even in response to cards and abilities put on the stack.
+                                    </li>
+                                    <li>
+                                        Reaction Cards all have this timing.
+                                    </li>
+                                    <li>
+                                        All activated abilities have this speed unless stated otherwise.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Abilities</summary>
+                <div class="rule-content">
+                    <p>
+                        Most cards have an effect on them called an ability.
+                        <ul>
+                            <li>
+                                There are 3 main types of abilities:
+                                <ul>
+                                    <li>
+                                        Static
+                                        <ul>
+                                            <li>
+                                                Abilities that essentially add a rule to the game while the card is in play and are always active.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Triggered
+                                        <ul>
+                                            <li>
+                                                Abilities that activate once specific conditions are met such as the end of the turn or when they deal damage.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Activated
+                                        <ul>
+                                            <li>
+                                                These abilities have a cost of some sort. These types of abilities will ALWAYS have a colon (:) in them. The cost of the ability is always before the colon and the effect is always after.
+                                            </li>
+                                            <li>
+                                                These abilities can be activated as many times as you can pay the cost unless stated otherwise.
+                                                <ul>
+                                                    <li>
+                                                        Even exhausted creatures can activate their abilities as long as exhaust isn’t part of the cost.
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                These abilities can be activated at reaction speed unless stated otherwise.
+                                            </li>
+                                            <li>
+                                                If the cost for an ability is “Exhaust:” then it is considered an exhaust ability and cannot be activated if the creature is exhausted.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Setup</summary>
+                <div class="rule-content">
+                    <p>Each player starts with 5 cards and 100 gold. Place the board in the center of the table...</p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary><strong>The Stack:</strong>- The order of cards and abilities taking effect.</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                An imaginary space used to order how cards and abilities take effect and resolve.
+                            </li>
+                            <li>
+                                When cards or abilities are paid for, they go on the top of the stack before resolving and taking effect.
+                            </li>
+                            <li>
+                                After something is put on the stack, starting with the player who is playing the current card or ability then continuing in turn order, players may also play cards at reaction speed or activate abilities that don't have timing restrictions.
+                                <ul>
+                                    <li>
+                                        These are added to the top of the stack and continue until both players are done.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Once both players have finished adding things to the stack, the cards and abilities are then resolved in order from the newest on the top of the stack all the way down to the oldest that started the stack.
+                                <ul>
+                                    <li>
+                                        Players may interrupt the resolving of the stack at any point with another reaction spell or ability.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                EXAMPLE:
+                                <ul>
+                                    <li>
+                                        Player A plays King Maelor which would add +1+1 to renown creatures once it enters the battlefield.
+                                    </li>
+                                    <li>
+                                        Player B wants to kill one of Player A’s 2/2 creatures with Chink in the Armor (deal 2 damage) but it will be too strong if King Maelor is on the battlefield so IN RESPONSE to Player A trying to summon King Maelor, Player B casts Chink in the armor at reaction speed, putting it on the stack ON TOP of King Maelor.
+                                    </li>
+                                    <li>
+                                        Player A doesn’t want the creature to die so IN RESPONSE to player B, they activate Dr. Fenlo to give that creature +2 Health and the ability goes on the stack ON TOP of the Chink in the Armor.
+                                    </li>
+                                    <li>
+                                        Both players are now done playing cards and activating abilities so now we resolve the stack in order from newest to oldest.
+                                        <ul>
+                                            <li>
+                                                First Dr. Fenlo resolves turning the 2/2 into a 2/4.
+                                            </li>
+                                            <li>
+                                                Then Chink in the Armor hits that creature dropping it’s health by 2.
+                                            </li>
+                                            <li>
+                                                Then King Maelor enters the battlefield giving all renown creatures +1+1.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Special Rules:
+                                <ul>
+                                    <li>
+                                        You cannot respond to a player spending the resources on a card or ability, only the actual ability or playing of the card.
+                                    </li>
+                                    <li>
+                                        Once a spell or ability is on the stack, IT WILL RESOLVE even if the source of the ability, or the target of the ability dies.
+                                        <ul>
+                                            <li>
+                                                Ex: If you spend the mana to activate King Maelor’s ability and someone responds by killing it with a spell on the stack, his ability will still trigger even though he died before it was resolved.
+                                            </li>
+                                            <li>
+                                                Ex: If a creature is targeted for a spell or ability but then the creature is removed from that zone, the ability/spell still resolves and counts as being played/activated but just doesn’t have an effect due to not having a valid target.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+            
+            <details class="rule-section">
+                <summary>Extra rules/Commonly used words:</summary>
+                <div class="rule-content">
+                    <p>
+                        <ul>
+                            <li>
+                                When creatures enter with summoning exhaust, this is a different type of exhaust
+                            </li>
+                            <li>
+                                When an ability denotes a creature gains +(crossed swords). That is specifically referring to the attack NUMBER. This boost (or boon) applies to melee and ranged creatures alike.
+                            </li>
+                            <li>
+                                Backwards/Back - move the creature back one space TOWARDS THEIR CONTROLLER.
+                            </li>
+                            <li>
+                                If anything refers to distance, it is calculated as the smallest distance it would move to to reach that zone if all zones were unoccupied.
+                            </li>
+                            <li>
+                                Vacant - a zone that doesn’t contain any units. Terrains do not make a zone “occupied”
+                            </li>
+                            <li>
+                                Occupied - a zone that has a unit in it.
+                            </li>
+                            <li>
+                                Unit - Creatures and constructs that are on the battlefield.
+                            </li>
+                            <li>
+                                Adjacent - The zones to the left, right, above, and below the selected zone making a plus shape.
+                            </li>
+                            <li>
+                                Surrounding - All the adjacent zones AND the zones in the corner of those zones.
+                            </li>
+                            <li>
+                                Ready - This creature does NOT enter the battlefield exhausted and can be activated the turn they are played.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+
             <div class="links-container">
                 <div>Join Us On Our Socials!</div>
                 <div class="links">
