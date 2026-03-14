@@ -150,11 +150,10 @@ a.nav-btn {
 }
 .social-logo-img {
     padding: 10px;
-    height: 150px;       /* Control the size here */
-    width: auto;        /* Prevents squishing */
+    height: auto;       /* Control the size here */
+    width: 100%;        /* Prevents squishing */
     display: flex;
     justify-content: center; /* Keep them bunched together in the center */
-    /* max-width: 400px; */
 
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
