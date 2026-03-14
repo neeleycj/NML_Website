@@ -2,7 +2,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* This keeps padding from breaking widths */
+    box-sizing: border-box; 
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevents the horizontal scroll */
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 600px) {
@@ -148,7 +154,7 @@ a.nav-btn {
     width: auto;        /* Prevents squishing */
     display: flex;
     justify-content: center; /* Keep them bunched together in the center */
-    max-width: 400px;
+    /* max-width: 400px; */
 
     transition: transform 0.3s ease; /* Smooth hover effect */
 }
