@@ -13,6 +13,14 @@ html, body {
 
 @media (max-width: 600px) {
     /* Make the logo bigger on small screens */
+    .main-banner {
+        position: fixed;
+        top: 0 !important; /* Force it to the absolute edge */
+        left: 0;
+        margin-top: 0;    /* Remove any top margin inherited from desktop */
+        z-index: 1000;
+    }
+
     .banner-logo-img {
         height: 80px; 
     }
@@ -85,8 +93,8 @@ body {
 .logo {
     font-size: 24px;
     letter-spacing: 2px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     color: #00d4ff;
 }
 
