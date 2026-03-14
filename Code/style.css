@@ -8,6 +8,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Force body to be at least the height of the screen */
+    margin: 0;
 }
 
 /* 2. The Floating Banner */
@@ -73,10 +77,10 @@ body {
 }
 /* 5. Space for the Content */
 .content {
-    padding-top: 240px; /* More padding so content starts below banner */
+    flex: 1; /* This "pushes" the footer down */
+    padding-top: 220px; /* Space for your floating banner */
     padding-left: 20px;
     padding-right: 20px;
-    height: 200vh; /* Adds extra height to test the scroll */
 }
 .banner-logo-img {
     height: 100px;       /* Control the size here */
@@ -98,7 +102,7 @@ a.nav-btn {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 200px;
 }
 .links {
     display: flex;
@@ -149,8 +153,8 @@ summary {
     font-weight: bold;
     cursor: pointer;
     background-color: #222;
-    color: #00d4ff;
-    list-style: none; /* Removes the default arrow in some browsers */
+    color: whitesmoke;
+    list-style: none; 
 }
 
 /* Adding a custom indicator (optional) */
@@ -173,3 +177,31 @@ details[open] summary::before {
     border-top: 1px solid #eee;
 }
 
+.rule-content ul {
+    padding-left: 20px;
+}
+.header-container{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.rules-header{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.tutorial-container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.welcome-text-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    font-size: 20px;
+}
