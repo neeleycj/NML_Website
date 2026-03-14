@@ -17,10 +17,12 @@ html, body {
         height: 80px; 
     }
 
-    /* Make your rule headers (summary) much easier to read/tap */
     summary {
         font-size: 18px;
         padding: 20px 15px; /* Bigger tap target for thumbs */
+    }
+    .content{
+        padding-top: 180px;
     }
 
     /* Make the rule text inside larger */
@@ -41,8 +43,9 @@ html, body {
     }
 
     .social-logo-img {
-        width: 50px; /* Make them larger for easy tapping */
-        height: auto;
+        height: auto !important;       /* Control the size here */
+        width: 100% !important;
+        
     }
 
 }
@@ -57,9 +60,12 @@ body {
 
 /* 2. The Floating Banner */
 .main-banner {
-    position: fixed;
-    top: 0;
+   position: fixed;
+    top: 0;      /* Force it to the absolute top */
+    left: 0;     /* Force it to the absolute left */
     width: 100%;
+    margin: 0;   /* Remove any accidental margins */
+    z-index: 9999;
     height: 200px; /* Increased height for logo + buttons */
     background-color: rgba(33, 33, 33, 0.95); /* Slight transparency */
     backdrop-filter: blur(5px); /* Blurs content behind the banner */
@@ -150,8 +156,8 @@ a.nav-btn {
 }
 .social-logo-img {
     padding: 10px;
-    height: auto;       /* Control the size here */
-    width: 100%;        /* Prevents squishing */
+    height: 150px;       /* Control the size here */
+    width: auto;        /* Prevents squishing */
     display: flex;
     justify-content: center; /* Keep them bunched together in the center */
 
