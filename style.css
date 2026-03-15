@@ -108,13 +108,13 @@ body {
 
 /* The Buttons themselves */
 .nav-btn {
-    flex: 1;              /* Each button takes up 50% of the width */
+    flex: 1;
     padding: 20px;   /* Vertical height for the buttons */
     cursor: pointer;
     background: #222;
     color: white;
-    border: none;         /* Remove default borders */
-    border-top: 1px solid #444; /* Subtle line separating logo from buttons */
+    border: none;
+    border-top: 1px solid #444; 
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s;
@@ -131,7 +131,7 @@ body {
 }
 
 .content {
-    flex: 1; /* This "pushes" the footer down */
+    flex: 1; 
     padding-top: 220px; /* Space for your floating banner */
     padding-left: 20px;
     padding-right: 20px;
@@ -149,7 +149,7 @@ body {
 }
 
 a.nav-btn {
-    text-decoration: none; /* Remove underline from links */
+    text-decoration: none; 
 }
 .links-container {
     display: flex;
@@ -190,8 +190,8 @@ a.nav-btn {
     margin: 0 10px;
     padding: 10px;
     transition: transform 0.3s ease; /* Smooth hover effect */
+
 }
-/* Container for each dropdown */
 .rule-section {
     background: white;
     margin-bottom: 10px;
@@ -201,7 +201,6 @@ a.nav-btn {
     border: 1px solid #ddd;
 }
 
-/* The "Header" of the dropdown */
 summary {
     padding: 15px;
     font-weight: bold;
@@ -211,7 +210,6 @@ summary {
     list-style: none; 
 }
 
-/* Adding a custom indicator (optional) */
 summary::before {
     content: "▶ ";
     display: inline-block;
@@ -223,7 +221,6 @@ details[open] summary::before {
     transform: rotate(90deg);
 }
 
-/* The text inside */
 .rule-content {
     padding: 20px;
     line-height: 1.6;
@@ -258,6 +255,7 @@ details[open] summary::before {
     padding: 20px;
     gap: 20px;
     font-size: 20px;
+    text-align: center;
 }
 .downloads-container{
     margin-top: 20px;
