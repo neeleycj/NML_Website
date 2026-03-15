@@ -259,3 +259,25 @@ details[open] summary::before {
     gap: 20px;
     font-size: 20px;
 }
+.downloads-container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.download-btn {
+    background-color: #00d4ff; /* A bright "Action" color */
+    color: #222;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.download-btn:hover {
+    transform: scale(1.05);
+}
