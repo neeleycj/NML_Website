@@ -256,10 +256,15 @@ details[open] summary::before {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 0 10px;
 }
 
 .video-container iframe {
-    max-width: 100%;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
 }
 .welcome-text-container{
     display: flex;
