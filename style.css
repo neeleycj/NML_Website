@@ -19,16 +19,19 @@ html, body {
         left: 0;
         margin-top: 0;    /* Remove any top margin inherited from desktop */
         z-index: 1000;
+        height: 200px; /* keep consistent with desktop banner height */
     }
 
     .banner-logo-img {
         height: 80px; 
     }
 
+    /* Make summary sections tappable */
     summary {
         font-size: 18px;
         padding: 20px 15px; /* Bigger tap target for thumbs */
     }
+
     .content{
         padding-top: 180px;
     }
@@ -38,10 +41,73 @@ html, body {
         font-size: 16px;
     }
 
-    /* Banner buttons text size */
+    /* Banner buttons text size (hidden on small screens) */
     .nav-btn {
         font-size: 14px;
         padding: 15px 5px;
+    }
+
+    /* On small screens hide the full nav buttons and use a hamburger */
+    .banner-buttons {
+        display: none; /* hide original buttons */
+    }
+
+    /* Simple CSS-only hamburger menu (requires a small HTML snippet shown below)
+       Place a <details class="hamburger-menu"> inside the banner (see instructions).
+    */
+    .hamburger-menu {
+        position: absolute;
+        right: 12px;
+        top: 18px;
+        z-index: 10001;
+    }
+    /* show the hamburger on small screens */
+    .hamburger-menu { display: inline-block; }
+
+    .hamburger-menu summary {
+        list-style: none;
+        cursor: pointer;
+        background: transparent;
+        color: white;
+        padding: 8px 10px;
+        font-size: 26px;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* hide default marker for WebKit/Blink */
+    .hamburger-menu summary::-webkit-details-marker { display: none; }
+    .hamburger-menu summary::before {
+        content: "☰"; /* hamburger glyph */
+        display: inline-block;
+        transform: none; /* override other summary rules */
+    }
+
+    /* The dropdown panel for the hamburger menu */
+    .hamburger-menu .menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 44px;
+        background: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        overflow: hidden;
+        min-width: 180px;
+    }
+    .hamburger-menu[open] .menu { display: block; }
+
+    .hamburger-menu .menu a {
+        display: block;
+        padding: 12px 16px;
+        color: white;
+        text-decoration: none;
+        border-top: 1px solid rgba(255,255,255,0.03);
+    }
+    .hamburger-menu .menu a:hover {
+        background: #333;
+        color: #00d4ff;
     }
 
     .links-container { 
@@ -53,9 +119,29 @@ html, body {
     .social-logo-img {
         height: auto !important;       /* Control the size here */
         width: 100% !important;
-        
     }
 
+}
+
+/* Strong mobile overrides placed at end so they take precedence. */
+@media (max-width: 600px) {
+    /* Force-hide desktop nav and show hamburger on mobile */
+    .banner-buttons { display: none !important; }
+    .hamburger-menu {
+        display: inline-block !important;
+        position: absolute !important;
+        left: 12px !important;   /* place hamburger on the left */
+        right: auto !important;
+        top: 18px !important;
+        z-index: 10001 !important;
+    }
+    /* Position the dropdown to the right of the hamburger icon (not off-screen) */
+    .hamburger-menu .menu {
+        left: calc(100% + 8px) !important; /* place menu to the right edge of the summary */
+        right: auto !important;
+        top: 44px !important;
+        min-width: 160px !important;
+    }
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -105,6 +191,10 @@ body {
     justify-content: center; /* Horizontal center */
     align-items: center;
 }
+
+/* Hide hamburger by default; mobile-specific rules will show it. */
+.hamburger-menu { display: none; }
+
 
 /* The Buttons themselves */
 .nav-btn {
