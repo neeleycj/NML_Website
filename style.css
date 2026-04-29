@@ -291,7 +291,7 @@ a.nav-btn {
     border: 1px solid #ddd;
 }
 
-summary {
+.rule-section > summary {
     padding: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -300,15 +300,21 @@ summary {
     list-style: none; 
 }
 
-summary::before {
+.rule-section > summary::before {
     content: "▶ ";
     display: inline-block;
     transition: transform 0.2s;
 }
 
 /* Rotates the arrow when the section is open */
-details[open] summary::before {
+.rule-section[open] > summary::before {
     transform: rotate(90deg);
+}
+
+/* Safety: keep hamburger hidden on desktop even if other rules are injected */
+@media (min-width: 601px) {
+    .hamburger-menu { display: none !important; }
+    .banner-buttons { display: flex !important; }
 }
 
 .rule-content {
