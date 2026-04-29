@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" href="../Assets/NML_Final_Logo.png">
         <title>No Man's Land — Card Gallery</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +35,7 @@
                 padding-bottom: 60px;
             }
             .set-hero {
+                margin-top: 100px;
                 background: linear-gradient(160deg, #1a1430 0%, #0d0b12 70%);
                 border-bottom: 1px solid var(--s1-border);
                 padding: 40px 32px 32px;
@@ -522,26 +524,50 @@
     </head>
     <body>
 
-        <header class="main-banner">
-            <div class="banner-content">
-                <div class="logo">
-                    <img src="../Assets/NML_Final_Logo.png" alt="Game Logo" class="banner-logo-img" fetchpriority="high" loading="eager">
+    <header class="main-banner">
+            <nav class="main-nav">
+                <div class="nav-section nav-left">
+                    <a href="../">Home</a>
+                    <a href="../downloads/">Downloads</a>
+                    <a href="../how-to-play/">How to Play</a>
+                    <a href="../card-gallery/">Card Gallery</a>
+                    <a href="../lore/">Lore</a>
                 </div>
-                <details class="hamburger-menu" aria-label="Main navigation">
-                    <summary aria-hidden="true"></summary>
-                    <div class="menu" role="menu">
-                        <a href="../" role="menuitem">Home</a>
-                        <a href="../how-to-play/" role="menuitem">How to Play</a>
-                        <a href="../downloads/" role="menuitem">Downloads</a>
-                        <a href="../lore/" role="menuitem">Lore</a>
+
+                <div class="nav-logo">
+                    <img src="../Assets/NML_Final_Logo.png" alt="No Man's Land">
+                </div>
+
+                <div class="nav-section nav-right">
+                    <a href="https://discord.gg/ymBTwPd3w2" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.instagram.com/nomanslandtcg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
+                    <a href="https://www.youtube.com/@NoMansLandTCG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
+                </div>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div id="mobileMenu" class="mobile-nav">
+                <div class="mobile-links">
+                    <a href="../">Home</a>
+                    <a href="../downloads/">Downloads</a>
+                    <a href="../how-to-play/">How to Play</a>
+                    <a href="../card-gallery/">Card Gallery</a>
+                    <a href="../lore/">Lore</a>
+                </div>
+
+                <div class="mobile-footer">
+                    <div class="social-row">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-twitch"></i>
                     </div>
-                </details>
-                <nav class="banner-buttons">
-                    <a href="../" class="nav-btn">Home</a>
-                    <a href="../how-to-play/" class="nav-btn">How To Play</a>
-                    <a href="../downloads/" class="nav-btn">Downloads</a>
-                    <a href="../lore/" class="nav-btn">Lore</a>
-                </nav>
+                    <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
+                </div>
             </div>
         </header>
 
@@ -630,18 +656,17 @@
                 <div id="s1-grid"></div>
             </div>
         </div>
-
-        <div class="links-container">
-            <div>Join Us On Our Socials!</div>
-            <div class="links">
-                <a href="https://discord.gg/ymBTwPd3w2" class="social-link"><img src="../Assets/discord-logo.png" alt="discord logo" class="social-logo-img"></a>
-                <a href="https://www.twitch.tv/nomanslandtcg" class="social-link"><img src="../Assets/twitch-logo.png" alt="twitch logo" class="social-logo-img"></a>
-                <a href="https://www.instagram.com/nomanslandtcg/" class="social-link"><img src="../Assets/insta-logo.png" alt="instagram logo" class="social-logo-img"></a>
-            </div>
-        </div>
         <div class="RLS-logo">
             <img src="../Assets/RLS_Logo.png" alt="RLS Logo" class="RLS-logo-img" fetchpriority="high" loading="eager">
         </div>
+
+        <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (!menu) return;
+            menu.classList.toggle('active');
+        }
+        </script>
 
         <script>
         const CARD_BASE_URL = "../Assets/Cards/";

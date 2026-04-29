@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Realms Lore</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="../style.css">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -58,126 +59,7 @@
     z-index: 0;
   }
 
-  /* ── BANNER (LOCAL COPY TO AVOID PAGE-SPECIFIC OVERRIDES) ── */
-  .main-banner {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    height: 200px;
-    margin: 0;
-    z-index: 9999;
-    background-color: rgba(33, 33, 33, 0.95);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .main-banner .banner-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .main-banner .logo {
-    font-size: 24px;
-    letter-spacing: 2px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #00d4ff;
-  }
-
-  .main-banner .banner-logo-img {
-    height: 100px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .main-banner .banner-buttons {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-banner .nav-btn {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #222;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-top: 1px solid #444;
-  }
-
-  .main-banner .hamburger-menu {
-    display: none;
-    position: absolute;
-    left: 12px;
-    top: 18px;
-    z-index: 10001;
-  }
-
-  .main-banner .hamburger-menu summary {
-    list-style: none;
-    cursor: pointer;
-    background: transparent;
-    color: #fff;
-    padding: 8px 10px;
-    font-size: 26px;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .main-banner .hamburger-menu summary::-webkit-details-marker { display: none; }
-  .main-banner .hamburger-menu summary::before {
-    content: "☰";
-    display: inline-block;
-    transform: none;
-  }
-
-  .main-banner .hamburger-menu .menu {
-    display: none;
-    position: absolute;
-    left: calc(100% + 8px);
-    right: auto;
-    top: 44px;
-    min-width: 160px;
-    background: #222;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    overflow: hidden;
-  }
-
-  .main-banner .hamburger-menu[open] .menu { display: block; }
-
-  .main-banner .hamburger-menu .menu a {
-    display: block;
-    padding: 12px 16px;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .main-banner .hamburger-menu .menu a:hover {
-    background: #333;
-    color: #00d4ff;
-  }
-
-  @media (max-width: 600px) {
-    .main-banner .banner-buttons { display: none !important; }
-    .main-banner .hamburger-menu { display: inline-block !important; }
-    .main-banner .banner-logo-img { height: 80px; }
-  }
+  /* Removed page-local legacy banner CSS; using global `style.css` navbar rules instead. */
 
   /* ── HEADER ── */
   body > header:not(.main-banner) {
@@ -199,6 +81,7 @@
   }
 
   h1 {
+    margin-top: 150px;
     font-family: 'Cinzel Decorative', serif;
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 900;
@@ -235,6 +118,7 @@
 
   /* ── NAV BUTTONS ── */
   body > nav:not(.banner-buttons) {
+    
     position: relative;
     z-index: 10;
     display: flex;
@@ -262,6 +146,11 @@
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
     outline: none;
     white-space: nowrap;
+  }
+  .mini-logo {
+    height: 40px;
+    width: auto;
+    display: block;
   }
 
   .realm-btn::before {
@@ -534,29 +423,51 @@
 <body>
 
 <header class="main-banner">
-    <div class="banner-content">
-        <div class="logo">
-            <img src="../Assets/NML_Final_Logo.png" alt="Game Logo" class="banner-logo-img">
+    <nav class="main-nav">
+        <div class="nav-section nav-left">
+            <a href="../">Home</a>
+            <a href="../downloads/">Downloads</a>
+            <a href="../how-to-play/">How to Play</a>
+            <a href="../card-gallery/">Card Gallery</a>
+            <a href="../lore/">Lore</a>
         </div>
 
-        <details class="hamburger-menu" aria-label="Main navigation">
-          <summary aria-hidden="true"></summary>
-          <div class="menu" role="menu">
-            <a href="../" role="menuitem">Home</a>
-            <a href="../downloads/" role="menuitem">Downloads</a>
-            <a href="../card-gallery/" role="menuitem">Card Gallery</a>
-            <a href="../how-to-play/" role="menuitem">How to Play</a>
-          </div>
-        </details>
+        <div class="nav-logo">
+            <img src="../Assets/NML_Final_Logo.png" alt="No Man's Land">
+        </div>
 
-        <nav class="banner-buttons">
-            <a href="../" class="nav-btn">Home</a>
-            <a href="../downloads/" class="nav-btn">Downloads</a>
-            <a href="../card-gallery/" class="nav-btn">Card Gallery</a>
-            <a href="../how-to-play/" class="nav-btn">How To Play</a>
-        </nav>
+        <div class="nav-section nav-right">
+          <a href="https://discord.gg/ymBTwPd3w2" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://www.instagram.com/nomanslandtcg/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
+          <a href="https://www.youtube.com/@NoMansLandTCG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
+        </div>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
     </div>
-</header>
+
+    <div id="mobileMenu" class="mobile-nav">
+      <div class="mobile-links">
+        <a href="../">Home</a>
+        <a href="../downloads/">Downloads</a>
+        <a href="../how-to-play/">How to Play</a>
+        <a href="../card-gallery/">Card Gallery</a>
+        <a href="../lore/">Lore</a>
+      </div>
+
+      <div class="mobile-footer">
+        <div class="social-row">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-twitch"></i>
+        </div>
+        <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
+      </div>
+    </div>
+  </header>
 
 <header>
   <p class="title-eyebrow">Codex of the Known Realms</p>
@@ -905,6 +816,12 @@
 </main>
 
 <script>
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  if (!menu) return;
+  menu.classList.toggle('active');
+}
+
   const buttons = document.querySelectorAll('.realm-btn');
   const panels  = document.querySelectorAll('.realm-panel');
   const map = {

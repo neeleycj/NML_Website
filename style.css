@@ -11,138 +11,8 @@ html, body {
     padding: 0;
 }
 
-@media (max-width: 600px) {
-    /* Make the logo bigger on small screens */
-    .main-banner {
-        position: fixed;
-        top: 0 !important; /* Force it to the absolute edge */
-        left: 0;
-        margin-top: 0;    /* Remove any top margin inherited from desktop */
-        z-index: 1000;
-        height: 200px; /* keep consistent with desktop banner height */
-    }
-
-    .banner-logo-img {
-        height: 80px; 
-    }
-
-    /* Make summary sections tappable */
-    summary {
-        font-size: 18px;
-        padding: 20px 15px; /* Bigger tap target for thumbs */
-    }
-
-    .content{
-        padding-top: 180px;
-    }
-
-    /* Make the rule text inside larger */
-    .rule-content {
-        font-size: 16px;
-    }
-
-    /* Banner buttons text size (hidden on small screens) */
-    .nav-btn {
-        font-size: 14px;
-        padding: 15px 5px;
-    }
-
-    /* On small screens hide the full nav buttons and use a hamburger */
-    .banner-buttons {
-        display: none; /* hide original buttons */
-    }
-
-    /* Simple CSS-only hamburger menu (requires a small HTML snippet shown below)
-       Place a <details class="hamburger-menu"> inside the banner (see instructions).
-    */
-    .hamburger-menu {
-        position: absolute;
-        right: 12px;
-        top: 18px;
-        z-index: 10001;
-    }
-    /* show the hamburger on small screens */
-    .hamburger-menu { display: inline-block; }
-
-    .hamburger-menu summary {
-        list-style: none;
-        cursor: pointer;
-        background: transparent;
-        color: white;
-        padding: 8px 10px;
-        font-size: 26px;
-        border: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-    /* hide default marker for WebKit/Blink */
-    .hamburger-menu summary::-webkit-details-marker { display: none; }
-    .hamburger-menu summary::before {
-        content: "☰"; /* hamburger glyph */
-        display: inline-block;
-        transform: none; /* override other summary rules */
-    }
-
-    /* The dropdown panel for the hamburger menu */
-    .hamburger-menu .menu {
-        display: none;
-        position: absolute;
-        right: 0;
-        top: 44px;
-        background: #222;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-        overflow: hidden;
-        min-width: 180px;
-    }
-    .hamburger-menu[open] .menu { display: block; }
-
-    .hamburger-menu .menu a {
-        display: block;
-        padding: 12px 16px;
-        color: white;
-        text-decoration: none;
-        border-top: 1px solid rgba(255,255,255,0.03);
-    }
-    .hamburger-menu .menu a:hover {
-        background: #333;
-        color: #00d4ff;
-    }
-
-    .links-container { 
-        display: flex;
-        justify-content: space-around;
-        padding: 20px 0;
-    }
-
-    .social-logo-img {
-        height: auto !important;       /* Control the size here */
-        width: 100% !important;
-    }
-
-}
-
-/* Strong mobile overrides placed at end so they take precedence. */
-@media (max-width: 600px) {
-    /* Force-hide desktop nav and show hamburger on mobile */
-    .banner-buttons { display: none !important; }
-    .hamburger-menu {
-        display: inline-block !important;
-        position: absolute !important;
-        left: 12px !important;   /* place hamburger on the left */
-        right: auto !important;
-        top: 18px !important;
-        z-index: 10001 !important;
-    }
-    /* Position the dropdown to the right of the hamburger icon (not off-screen) */
-    .hamburger-menu .menu {
-        left: calc(100% + 8px) !important; /* place menu to the right edge of the summary */
-        right: auto !important;
-        top: 44px !important;
-        min-width: 160px !important;
-    }
-}
+/* Removed legacy mobile/banner CSS to keep only the new navbar/hamburger rules at the
+   bottom of this file. */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f0f0;
@@ -158,10 +28,9 @@ body {
     top: 0;      /* Force it to the absolute top */
     left: 0;     /* Force it to the absolute left */
     width: 100%;
+    min-height: 100px;
     margin: 0;   /* Remove any accidental margins */
     z-index: 9999;
-    height: 200px; /* Increased height for logo + buttons */
-    background-color: rgba(33, 33, 33, 0.95); /* Slight transparency */
     backdrop-filter: blur(5px); /* Blurs content behind the banner */
     color: white;
     z-index: 9999;
@@ -169,32 +38,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-.banner-content {
-    width: 100%;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-}
-
-.logo {
-    font-size: 24px;
-    letter-spacing: 2px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    color: #00d4ff;
-}
-
-/* 4. Button Styling */
-.banner-buttons {
-    display: flex;        /* Put buttons side-by-side */
-    width: 100%;          /* Stretch container to full width */
-    justify-content: center; /* Horizontal center */
-    align-items: center;
-}
-
-/* Hide hamburger by default; mobile-specific rules will show it. */
-.hamburger-menu { display: none; }
-
 
 /* The Buttons themselves */
 .nav-btn {
@@ -226,44 +69,11 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-.banner-logo-img {
-    height: 100px;       /* Control the size here */
-    width: auto;        /* Prevents squishing */
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
-
-.banner-logo-img:hover {
-    transform: scale(1.05); /* Makes it pop slightly when hovered */
-}
-
 a.nav-btn {
     text-decoration: none; 
 }
-.links-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 200px;
-}
-.links {
-    display: flex;
-    justify-content: center;
-}
-.social-logo-img {
-    padding: 10px;
-    height: 150px;       /* Control the size here */
-    width: auto;        /* Prevents squishing */
-    display: flex;
-    justify-content: center; /* Keep them bunched together in the center */
-
-    transition: transform 0.3s ease; /* Smooth hover effect */
-}
-.social-logo-img:hover {
-    transform: scale(1.1); /* Makes it pop slightly when hovered */
-}
+/* Removed legacy banner elements (banner-content, logo, banner-logo-img, banner-buttons,
+   legacy site-wide links block) to avoid conflict with new `.main-nav` implementation. */
 
 .RLS-logo {
     width: auto;        /* Prevents squishing */
@@ -392,4 +202,147 @@ a.nav-btn {
 
 .download-btn:hover {
     transform: scale(1.05);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #fdf5e6; /* That cream/off-white color */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    height: 100px;
+}
+
+/* Style the text links */
+.nav-section a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif; /* Or your chosen font */
+    font-size: 14px;
+    margin: 0 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The Logo */
+.nav-logo img {
+    height: 80px; /* Adjust based on your image size */
+    width: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav-right i {
+    color: #2c3e50; /* Dark blue-grey matching the text */
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-right i:hover {
+    color: #546e7a; /* Muted hover color */
+}
+
+/* The "Watch Live" Button */
+.watch-live-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #546e7a; /* Muted blue-grey */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+}
+/* Hide hamburger and mobile menu on Desktop */
+.hamburger, .mobile-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* Show the hamburger */
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10001;
+        color: #2c3e50;
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .hamburger i {
+        display: block;
+        line-height: 1;
+    }
+
+    /* Hide the regular desktop links */
+    .nav-left, .nav-right {
+        display: none;
+    }
+
+    /* Style the Mobile Drawer */
+    .mobile-nav {
+        display: flex; /* We'll use JS to toggle this */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start hidden off-screen to the right */
+        width: 100%;
+        height: 100vh;
+        background-color: #fdf5e6;
+        z-index: 9999;
+        transition: right 0.3s ease; /* Smooth slide effect */
+        padding: 20px;
+    }
+
+    /* When active, slide in */
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    /* Layout the links vertically */
+    .mobile-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .mobile-links a {
+        font-size: 28px; /* Big and tappable like your screenshot */
+        margin: 15px 0;
+        text-decoration: none;
+        color: #2c3e50;
+    }
+    .mobile-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-bottom: 40px;
+    }
+
+    .social-row {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .social-row i {
+        margin: 0 15px;
+    }
 }
