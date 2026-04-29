@@ -334,7 +334,7 @@ a.nav-btn {
     .mobile-footer {
     margin-top: auto;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 100px;
     }
 
     .social-row {
@@ -343,6 +343,7 @@ a.nav-btn {
     }
 
     .social-row i {
+        color: #2c3e50;
         margin: 0 15px;
     }
 }
