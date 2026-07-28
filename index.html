@@ -552,7 +552,7 @@
             .try-free-inner {
                 position: relative;
                 z-index: 1;
-                max-width: 1100px;
+                max-width: 1400px;
                 margin: 0 auto;
                 padding: 0 2.5rem;
             }
@@ -611,10 +611,10 @@
                 flex-shrink: 0;
             }
  
-            /* Two-column cards */
+            /* Three-column cards */
             .try-free-grid {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
                 gap: 2.5rem;
                 align-items: start;
             }
@@ -709,6 +709,81 @@
                 margin: 0;
             }
  
+            /* ── Webapp card ── */
+            .webapp-card {
+                border-color: rgba(201,162,39,0.38);
+            }
+
+            .webapp-hero {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                padding: 2.6rem 1.5rem;
+                text-align: center;
+                background:
+                    radial-gradient(ellipse 80% 70% at 50% 30%, rgba(201,162,39,0.16) 0%, transparent 70%),
+                    linear-gradient(160deg, #1d1608 0%, #241a09 55%, #150f06 100%);
+                border-bottom: 1px solid rgba(201,162,39,0.12);
+                overflow: hidden;
+            }
+            .webapp-hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(circle, rgba(255,240,200,0.10) 1px, transparent 1px);
+                background-size: 26px 26px;
+                pointer-events: none;
+            }
+
+            .webapp-hero-logo {
+                position: relative;
+                width: 100%;
+                max-width: 190px;
+                height: auto;
+                filter: drop-shadow(0 6px 20px rgba(0,0,0,0.6));
+            }
+
+            .webapp-hero-sub {
+                position: relative;
+                font-family: 'Lora', Georgia, serif;
+                font-size: 0.92rem;
+                font-style: italic;
+                color: rgba(255,240,200,0.78);
+            }
+
+            .webapp-play-btn {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.55rem;
+                margin-top: 0.3rem;
+                padding: 0.75rem 2.1rem;
+                font-family: 'Cinzel', serif;
+                font-size: 1rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #1a1209;
+                background: linear-gradient(135deg, #f0d47a 0%, #c9a227 45%, #a8811a 100%);
+                border: 1px solid rgba(255,235,170,0.6);
+                border-radius: 40px;
+                box-shadow: 0 4px 22px rgba(201,162,39,0.35);
+                transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.25s ease;
+            }
+            .webapp-play-btn:hover {
+                transform: translateY(-2px);
+                filter: brightness(1.08);
+                box-shadow: 0 8px 30px rgba(201,162,39,0.55);
+            }
+            .webapp-play-btn:active { transform: translateY(0); }
+
+            @media (max-width: 1150px) {
+                .try-free-grid { grid-template-columns: 1fr 1fr; }
+            }
             @media (max-width: 820px) {
                 .try-free-grid { grid-template-columns: 1fr; }
             }
@@ -735,6 +810,7 @@
                     <a href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
                     <a href="https://www.youtube.com/@NoMansLandTCG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
+                    <a class="try-now-btn" href="https://play.nomanslandtcg.com">Try It Now!</a>
                 </div>
             </nav>
             <div class="hamburger" onclick="toggleMenu()">
@@ -757,6 +833,7 @@
                         <a href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a>
                         <a href="https://www.youtube.com/@NoMansLandTCG" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                     </div>
+                    <a class="try-now-btn" href="https://play.nomanslandtcg.com">Try It Now!</a>
                     <a class="watch-live-btn" href="https://www.twitch.tv/nomanslandtcg" target="_blank" rel="noopener">WATCH LIVE</a>
                 </div>
             </div>
@@ -993,7 +1070,29 @@
                             <p>Play for free with the Demo! Need someone to play with ask in the Discord! Sample decks are provided so you can jump straight in, or import your own creations directly from the Deckbuilder.</p>
                         </div>
                     </div>
- 
+
+                    <!-- Webapp card -->
+                    <div class="tool-card webapp-card">
+                        <div class="tool-card-header">
+                            <div class="tool-card-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <span class="tool-card-title">Webapp</span>
+                        </div>
+                        <div class="webapp-hero">
+                            <img src="Assets/NML_Final_Logo.png" alt="No Man's Land" class="webapp-hero-logo" />
+                            <span class="webapp-hero-sub">Play right in your browser &ndash; nothing to install</span>
+                            <a href="https://play.nomanslandtcg.com" class="webapp-play-btn">Try It Now!</a>
+                        </div>
+                        <div class="tool-card-body">
+                            <p>Try No Man's Land without any downloads for free! You can play on our webapp against AI, build your own deck or play with friends by creating a lobby!</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

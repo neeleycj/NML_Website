@@ -218,6 +218,12 @@ a.nav-btn {
     height: 100px;
 }
 
+.nav-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
 /* Style the text links */
 .nav-section a {
     text-decoration: none;
@@ -227,6 +233,7 @@ a.nav-btn {
     margin: 0 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 /* The Logo */
@@ -265,12 +272,78 @@ a.nav-btn {
     cursor: pointer;
     margin-left: 20px;
 }
+/* The "Try It Now!" call to action */
+.try-now-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #1a1209;
+    background: linear-gradient(135deg, #f0d47a 0%, #c9a227 45%, #a8811a 100%);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-left: 16px;
+    box-shadow: 0 2px 10px rgba(201, 162, 39, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    animation: try-now-pulse 2.6s ease-in-out infinite;
+}
+
+.try-now-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 6px 20px rgba(201, 162, 39, 0.6);
+    animation: none;
+}
+
+.try-now-btn:active {
+    transform: translateY(0);
+}
+
+@keyframes try-now-pulse {
+    0%, 100% { box-shadow: 0 2px 10px rgba(201, 162, 39, 0.45); }
+    50%      { box-shadow: 0 2px 10px rgba(201, 162, 39, 0.45), 0 0 18px rgba(201, 162, 39, 0.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .try-now-btn { animation: none; }
+}
+
 /* Hide hamburger and mobile menu on Desktop */
 .hamburger, .mobile-nav {
     display: none;
 }
 
-@media (max-width: 768px) {
+/* The centred logo is absolutely positioned, so the link rows have to stay
+   clear of it themselves. Tighten spacing on narrower desktops so the nav
+   still fits alongside both the "Watch Live" and "Try It Now" buttons. */
+@media (min-width: 1151px) and (max-width: 1400px) {
+    .nav-section a {
+        font-size: 13px;
+        margin: 0 9px;
+    }
+    .nav-right i {
+        font-size: 17px;
+        margin: 0 6px;
+    }
+    .watch-live-btn {
+        padding: 10px 18px;
+        margin-left: 12px;
+    }
+    .try-now-btn {
+        padding: 11px 22px;
+        font-size: 14px;
+        margin-left: 12px;
+    }
+}
+
+@media (max-width: 1150px) {
     /* Show the hamburger */
     .hamburger {
         display: flex;
@@ -345,5 +418,12 @@ a.nav-btn {
     .social-row i {
         color: #2c3e50;
         margin: 0 15px;
+    }
+
+    /* CTA in the mobile drawer, above "Watch Live" */
+    .mobile-footer .try-now-btn {
+        margin: 0 0 16px 0;
+        padding: 16px 44px;
+        font-size: 20px;
     }
 }
