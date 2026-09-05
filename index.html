@@ -934,7 +934,10 @@
                 top: 50%;
                 width: 0;
                 height: 0;
-                transform-style: preserve-3d;
+                /* Each card is its own flat layer so stacking comes from z-index. Sharing one 3D
+                   space let tilted side cards intersect (and clip through) the featured card. */
+                transform-style: flat;
+                perspective: 1400px;
             }
             /* glowing floor under the featured card */
             .showcase-glow {
